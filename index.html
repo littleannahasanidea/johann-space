@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#E31C79">
+  <meta name="description" content="A private personal dashboard for tasks, health, budget, prayers, memories, and brain dumps.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/app-icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/app-icon-192.png">
+  <title>My Personal Space</title>
+  <style>
+    *{box-sizing:border-box}
+    html,body{width:100%;height:100%;margin:0;background:#f3eef2;overflow:hidden}
+    body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    #app-frame{display:block;width:100%;height:100%;border:0;background:#f3eef2}
+    #loading{position:fixed;inset:0;display:grid;place-items:center;background:#f3eef2;color:#6d5874;font-size:14px;letter-spacing:.02em;transition:opacity .18s}
+    #loading.hidden{opacity:0;pointer-events:none}
+    #offline{position:fixed;top:max(10px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:5;padding:7px 12px;border-radius:999px;background:#3b2354;color:#fff;font-size:11px;font-weight:700;box-shadow:0 8px 24px rgba(59,35,84,.24);display:none}
+    body.is-offline #offline{display:block}
+  </style>
+</head>
+<body>
+  <div id="loading">Opening your space…</div>
+  <div id="offline">Offline mode</div>
+  <iframe id="app-frame" title="My Personal Space"></iframe>
+  <script src="./views.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
